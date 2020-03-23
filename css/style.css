@@ -1,0 +1,861 @@
+/*共通部分*/
+#wrapper{
+
+  overflow-x: hidden !important;
+  }
+body{
+  margin:0;
+}
+li{
+  list-style:none;
+}
+.container{
+  max-width:1000px;
+  margin:0 auto;
+}
+a{
+  text-decoration:none;
+  color:#fff;
+}
+*{
+  box-sizing:border-box;
+}
+
+/*スマホ*/
+
+  /*ヘッダー*/
+  header{
+    height:900px;
+    margin:auto;
+    color:#fff;
+    position:relative;
+  }
+  /*ハンバーガーメニュー*/
+  nav.globalMenuSp {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+  }
+  nav.globalMenuSp ul {
+    background: #ccc;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+  nav.globalMenuSp ul li {
+    font-size: 1.1em;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px dotted #333;
+  }
+
+  /* 最後はラインを描かない */
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #000;
+    padding: 1em 0;
+  }
+
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    transform: translateY(0%);
+  }
+  .navToggle {
+    display: block;
+    position:absolute;
+    top:20px;
+    right:30px;
+    /* bodyに対しての絶対位置指定 */
+    right: 50px;
+    top: 12px;
+    width: 42px;
+    height: 51px;
+    cursor: pointer;
+    z-index: 3;
+    background: #666;
+    text-align: center;
+  }
+
+  .navToggle span {
+    display: block;
+    position: absolute;
+    /* .navToggleに対して */
+    width: 30px;
+    border-bottom: solid 3px #eee;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    left: 6px;
+  }
+
+  .navToggle span:nth-child(1) {
+    top: 9px;
+  }
+
+  .navToggle span:nth-child(2) {
+    top: 18px;
+  }
+
+  .navToggle span:nth-child(3) {
+    top: 27px;
+  }
+
+  .navToggle span:nth-child(4) {
+    border: none;
+    color: #eee;
+    font-size: 9px;
+    font-weight: bold;
+    top: 34px;
+  }
+
+  /* 最初のspanをマイナス45度に */
+  .navToggle.active span:nth-child(1) {
+    top: 18px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  /* 2番目と3番目のspanを45度に */
+  .navToggle.active span:nth-child(2),
+  .navToggle.active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .globalMenuSp.active>.navi {
+    /* 追記 */
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+  }
+
+  .globalMenuSp.active li {
+    /* 追記 */
+    margin-left: 0;
+  }
+  #message .container{
+    display: flex;
+    flex-direction:column;
+  }
+  
+  .img1,.img14,.img15,.img16,.img17 {
+    top:0;
+  }
+  header .logo{
+    position:absolute;
+    top:200px;
+    left:150px;
+  }
+  header .navi{
+    display:none;
+  }
+
+  .logo p:first-child{
+    font-size:40px;
+    margin-bottom:0;
+  }
+  .logo p:nth-child(2){
+    font-size:10px;
+    margin-left:30px;
+  }
+  .menu{
+    height:30px;
+    background-color:#fff;
+  }
+  .img1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    opacity: 0;
+   
+    /* アニメーションプロパティ*/
+    animation-name: changeMainImage;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+  }
+  .img14 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    opacity: 0;
+   
+    /* アニメーションプロパティ
+     2枚目以降はanimation-delayを設定して
+   アニメーション開始タイミングを遅らせる*/
+    animation-name: changeMainImage;
+    animation-delay: 5s;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+  }
+  .img15 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    opacity: 0;
+   
+  /*アニメーションプロパティ*/
+    animation-name: changeMainImage;
+    animation-delay: 10s;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+  }
+  .img16 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    opacity: 0;
+   
+    /*アニメーションプロパティ*/
+    animation-name: changeMainImage;
+    animation-delay: 15s;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+  }
+  .img17 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   
+    opacity: 0;
+   
+    /*アニメーションプロパティ
+     ラストの画像はchangeMainImageLastという他と違うアニメーション
+     表示をいい感じにするために
+     ブラウザでタイミングを見ながら微調整して作成したため */
+    animation-name: changeMainImageLast;
+    animation-delay: 20s;
+    animation-duration: 26s;
+    animation-iteration-count: infinite;
+  }
+  
+  /* keyframes */
+  @keyframes changeMainImage {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    33% {
+      opacity: 0.1;
+    }
+    35% {
+      opacity: 0;
+    }
+  }
+  @keyframes changeMainImageLast {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+  }
+  .header-img {
+    height:900px;
+    width:100%;
+    object-fit:cover;
+  }
+
+  /*pas-polの所*/
+  #message{
+    background-color:#F6F6F6;
+    padding-top:59px;
+    padding-bottom:30px;
+   padding: 20px ;
+  }
+  #message .container h1{
+    font-size:30px;
+    margin-top:0;
+  }
+  #message .container p:nth-child(2),#message .container p:nth-child(3),
+  #message .container p:nth-child(4),#message .container p:nth-child(6){
+    font-size:20px;
+    margin-top: 20px;
+    line-height:2em;
+  }
+  #message p:nth-child(5){
+    font-size:30px;
+    font-weight:bold;
+    margin-top: 20px;
+  }
+
+  /*productの所*/
+  .product-more a{
+    display:none;
+  }
+  .product-more{
+    display:flex;
+    justify-content:center;
+  }
+  .product-more2{
+    margin-left:auto;
+    margin-right:auto;
+    display:inline-block;
+    margin-top:50px;
+    padding:22px;
+  }
+  .product-more2 a:hover{
+    background-color:#13191B;
+    color:#fff;
+  }
+  .product-more h2{
+    font-size:40px;
+  }
+  #product .flex{
+    justify-content:center;
+    text-align:center;
+  }
+  .flex img{
+    width:120%;
+  }
+  .flex p{
+    font-size:20px;
+    font-weight:bold;
+  }
+
+  .product-more a:hover{
+    background-color:#13191B;
+    color:#fff;
+  }
+  .product-more2 a,.news-more2 a{
+    color:#13191B;
+    display:inline-block;
+    padding:22px 70px;
+    border:1px solid #13191B;
+  }
+  .product-more h2,.news-more h2{
+    margin-top:0;
+  }
+  #product .flex{
+    display:flex;
+    flex-wrap:wrap;
+    padding-left: 0;
+  }
+  #product .flex li{
+    margin-right:20px;
+  }
+  #product .flex li:hover{
+    opacity:0.8;
+  }
+  #product .flex li p{
+    color:#13191B;
+    margin: 10px;
+  }
+  #product{
+    padding:20px;
+    text-align:center;
+  }
+  #product h1{
+    font-size: 30px;
+  }
+ 
+  /*ニュースの所*/
+  #news{
+    background-color:#F6F6F6;
+    padding-bottom:60px;
+  }
+  #news h1{
+    font-size: 30px;
+  }
+  .news-more{
+    padding-top:60px;
+    display:flex;
+    justify-content:center;
+  }
+  .news-more a{
+    display:none;
+  }
+  .news-more2{
+    width:188px;
+    margin:0 auto;
+  }
+  .news-more2 a:hover{
+    background-color:#13191B;
+    color: #ffffff;
+  }
+  .imformation{
+    display:flex;
+    flex-direction:column;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    width:322.5px;
+  }
+  .explain p:nth-child(3){
+    display:none;
+  }
+  .explain h3{
+    font-size:17px;
+    width:322.5px;
+    line-height:2em;
+  }
+  .explain{
+    margin-left:0;
+  }
+  .explain p:nth-child(2){
+    font-size:10px;
+  }
+  .explain p:nth-child(3){
+    font-size:15px;
+  }
+
+  /*snsの所*/
+#sns .container{
+  max-width:1919px;
+}
+.sns{
+  display:flex;
+  flex-wrap:wrap;
+  padding:30px 0;
+justify-content:space-around;
+}
+.sns a{
+  display:block;
+  padding:10px 5px;
+  margin:0 auto;
+  width: 100%;
+}
+.sns a:first-child{
+  color:#4870A9;
+}
+.sns a:nth-child(2){
+  color:#76C0D5;
+}
+.sns a:nth-child(3){
+  color:#3E9ECE;
+}
+.sns li:first-child{
+  border:1px solid #4870A9;
+}
+.sns li:nth-child(2){
+  border:1px solid #76C0D5;
+  margin-right: 20px;
+}
+.sns li:nth-child(3){
+  border:1px solid #3E9ECE;
+}
+.sns li{
+  margin-top:20px;
+  font-size:13px;
+}
+
+  /*一番下から2番目のメニュー*/
+  #footer-navi{
+    background-color:#939899;
+  }
+  #footer-navi ul{
+    display:flex;
+    flex-direction:column;
+    margin:0;
+    padding-left:0;
+  }
+  #footer-navi li{
+    padding:20px 0px;
+    border-top: 1px solid #fff;
+    width: 100vw;
+    text-align:center;
+  }
+  footer{
+    text-align:center;
+  }
+  footer small{
+    font-size:10px;
+  }
+  /*フッター*/
+  footer{
+    padding:40px 30px;
+    color:#fff;
+    background-color:#656B6E;
+  }
+
+  
+
+ /*タブレット*/
+@media screen and (min-width:768px) { 
+
+/*pas-polの所*/
+#message .container h1,#message p:nth-child(5) {
+  text-align: center;
+}
+#message p{
+  width: 500px;
+  margin:0 auto;  
+}
+
+/*productの所*/
+.product-more{
+  display: flex;
+  justify-content:space-between;
+}
+.product-more a{
+  color: #13191B;
+  display: inline-block;
+  padding: 22px 70px 32px 70px;
+  border: 1px solid #13191B;
+  height:0;                                       
+}
+.product-more,.news-more{
+  padding-left:40px;
+  padding-right:40px;
+}
+#product .flex,#product {
+  text-align:initial;
+  margin-top: 30px;
+}
+#product .flex li a{
+  display:flex;
+  flex-direction:column;
+}
+#product .flex li p{
+  padding-top:30px;
+  font-size: 15px;
+  margin-top:0;
+}
+#product .flex li{
+  width: 200px;
+}
+.flex img {
+  width: 90%;
+}
+.product-more2 a, .news-more2 a {
+  display: none;
+}
+
+/*newsの所*/
+.news-more a {
+  color: #13191B;
+  display: inline-block;
+  padding: 22px 70px 32px 70px;
+  border: 1px solid #13191B;
+  height:0;  
+}
+.news-more{
+  display: flex;
+  justify-content:space-between;
+}
+.explain{
+  margin-left: 80px;
+}
+.explain p:nth-child(2) {
+  margin:10px 0;
+}
+.explain p:nth-child(3){
+  display:inline-block;
+  width:370px;
+  line-height:1.5em;
+}
+
+.imformation{
+  flex-direction:row;
+  padding-left:40px;
+  margin-left: 0;
+  margin-right: 0;
+  width:750px;
+}
+.imformation img{
+  width:250px;
+  height:150px;
+}
+.news-more2{
+  margin-top: 50px;
+}
+#footer-navi .container{
+  margin: 0;
+}
+
+/*snsの所*/
+.sns a {
+  padding-left:30px;
+  padding-right:30px;
+}
+
+/*一番下*/
+footer{
+  text-align:center;
+}
+}
+ 
+/*パソコン*/
+@media screen and (min-width:1280px) { 
+/*ヘッダー*/
+nav.globalMenuSp ul {
+  width: 500px;
+}
+.navi li {
+  margin-left: 0;
+}
+  .navToggle {
+    display: none;
+  }
+  nav.globalMenuSp ul {
+    background:none;
+    margin-right: 10px;
+    display: flex;
+    position:absolute;
+    right:100px;
+    top:50px;
+  }
+  nav.globalMenuSp ul li a{
+    width:80px;
+    color:#fff;
+    padding-bottom: 5px;
+  }
+  nav.globalMenuSp ul li {
+    border-bottom: 1px solid transparent;
+}
+nav.globalMenuSp ul li:hover {
+  border-bottom: 1px solid #fff;
+}
+header{
+  height:900px;
+  color:#fff;
+  position:relative;
+}
+.menu{
+  padding:10px 0 10px 10px;
+  font-size:15px;
+  background-color:#fff;
+}
+.menu p{
+  margin-top:0;
+}
+header .navi{
+  position:absolute;
+  top:30px;
+  right:30px;
+}
+header .logo{
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+.logo p:first-child{
+  margin-top:0;
+  font-size:30px;
+  font-weight:bold;
+}
+.logo p:nth-child(2){
+  font-size:10px;
+}
+.logo p:nth-child(2){
+  display:inline-block;
+}
+.logo{
+  margin-left:89px;
+  margin-top:29px;
+}
+header .navi{
+  display:flex;
+  margin-top:49px;
+  margin-right:16px;
+}
+header li{
+  margin-left:95px;
+}
+.navi li:hover{
+  border-bottom:2px solid #fff;
+  padding-bottom:5px;
+}
+
+/*本が並んでいる所*/
+.product-more,.news-more{
+  display:flex;
+  justify-content:space-between;
+}
+.product-more a:hover{
+  background-color:#13191B;
+  color:#fff;
+}
+.product-more2 a{
+  color:#13191B;
+  display:block;
+  padding:22px 52px;
+  border:1px solid #13191B;
+}
+.product-more2{
+  width:176px;
+  display:none;
+}
+.product-more a,.news-more a{
+  color:#13191B;
+  display:block;
+  padding:22px 52px;
+  border:1px solid #13191B;
+}
+.product-more h2,.news-more h2{
+  margin-top:0;
+}
+#product .flex li a {
+  flex-direction:column;
+}
+.product-more a, .news-more a {
+  padding-bottom: 40px;
+}
+#product .flex li{
+  margin-right:20px;
+  width: 300px;
+}
+#product .flex li:hover{
+  opacity:0.8;
+}
+.flex img{
+  width:100%;
+}
+#product .flex li p{
+  color:#13191B;
+}
+.product .flex{
+  text-align:initial;          
+}
+
+/*ニュースの所*/
+#news{
+  background-color:#F6F6F6;
+  padding-bottom:60px;
+  margin-top:140px;
+}
+.news-more{
+  padding-top:124px;
+}
+.news-more2 a{
+  color:#13191B;
+  display:block;
+  padding:22px 52px;
+  border:1px solid #13191B;
+}
+.news-more a:hover{
+  background-color: #13191b;
+  color: #ffffff;
+}
+.news-more2{
+  width:176px;
+  display:none;
+}
+.news-more h2 {
+  font-size:40px;
+}
+.imformation{
+  display:flex;
+  align-items:flex-start;
+  margin-top:124px;
+}
+.imformation img{
+  display:block;
+}
+.explain{
+  margin-left:50px;
+}
+.explain h3{
+  font-size:20px;
+  width:460px;
+}
+.explain p:nth-child(2){
+  font-size:10px;
+}
+.explain p:nth-child(3){
+  font-size:15px;
+  width:520px;
+}
+
+/*sns*/
+.sns{
+  justify-content:center;
+  padding-top:20px;
+}
+.sns a{
+  display:block;
+  padding:20px 50px;
+}
+.sns a:first-child{
+  color:#4870A9;
+  border:1px solid #4870A9;
+  margin-right:20px;
+}
+.sns a:nth-child(2){
+  color:#76C0D5;
+  border:1px solid #76C0D5;
+  margin-right:20px;
+}
+.sns a:nth-child(3){
+  color:#3E9ECE;
+  border:1px solid #3E9ECE;
+  margin-right:20px;
+}
+.sns li{
+  margin-right:30px;
+}
+
+/*下から2番目のナビゲーション*/
+#footer-navi{
+  background-color:#939899;
+  padding-top:20px;
+  padding-bottom:20px;
+
+}
+#footer-navi ul{
+  display:flex;
+  flex-direction: row;
+}
+#footer-navi li{
+  border-top:none;
+}
+#footer-navi a{
+  display:block;
+  color:#fff;
+  margin-right:45px;
+}
+
+/*フッター*/
+footer{
+  padding:40px 0;
+  color:#fff;
+  background-color:#656B6E;
+}
+#footer-navi{
+  display: flex;
+  justify-content: center;
+}
+
+}
