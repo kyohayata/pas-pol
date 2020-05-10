@@ -294,6 +294,7 @@ header li a{
 .imformation{
   display:flex;
   align-items:flex-start;
+  justify-content:center;
   margin-top:124px;
 }
 .imformation img{
@@ -563,9 +564,7 @@ nav.globalMenuSp.active {
 .explain p:nth-child(2){
   font-size: 15px;
 }
-.imformation{
-  padding-left:30px;
-}
+
 
 
 /*snsの所*/
@@ -637,15 +636,13 @@ footer{
     background-color:#13191B;
     color:#fff;
   }
-  #product .flex{
-    padding-left: 0;
-  }
+
   #product .flex li a {
     flex-direction:column;
     justify-content:center;
   }
   .flex img{
-    width:100%;
+    width:80%;
   }
   .flex p{
     font-size:20px;
@@ -653,6 +650,7 @@ footer{
   }
   #product .flex li p {
     padding-top: 0;
+    margin-left: 0;
   }
 
 
@@ -663,7 +661,6 @@ footer{
     padding-bottom:60px;
   }
   .news-more{
-    padding-top:124px;
     display:flex;
     justify-content:center;
   }
@@ -681,14 +678,13 @@ footer{
     color: #ffffff;
   }
   .imformation{
-    flex-direction:column;
-    margin-left:auto;
-    margin-right:auto;
+    flex-wrap:wrap;
+justify-content:center;
     margin-top:30px;
-    width:322.5px;
+
   }
   .imformation img {
-    width: 60vw;
+    width: 80vw;
   }
   .explain p:nth-child(3){
     display:none;
